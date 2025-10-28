@@ -1,15 +1,48 @@
-# Week 1 Journal – Installing Ubuntu and Tools
+# Week 1 Journal – Installing Ubuntu on UTM (macOS ARM)
 
-## 🔧 What I Did
-This week, I installed:
-- Oracle VirtualBox on my MacBook Pro
-- Ubuntu 25.10 (64-bit) as a virtual machine
-- Visual Studio Code as the main code editor
+##  What I Did
 
-## 📦 Terminal Commands Executed
+This week, I set up a virtual machine on my MacBook Pro using **UTM** and installed **Ubuntu 25.10 (ARM64)**. 
+
+Tasks I completed:
+- Downloaded UTM for macOS.
+- Created a virtual machine with the following specs:
+  - Architecture: ARM64
+  - RAM: 4 GB
+  - Disk: 10.15 GB
+- Mounted the Ubuntu ISO file (`ubuntu-25.10-desktop-arm64.iso`) as a virtual CD/DVD.
+- Installed Ubuntu 25.10 successfully inside the virtual machine.
+- Logged in and accessed the Linux terminal.
+
+## Terminal Commands Executed
+
 ```bash
-sudo apt update  
-sudo apt upgrade  
-sudo apt install build-essential  
-sudo apt install nasm  
-sudo apt install qemu virt-manager virt-viewer
+ls         # List files and directories
+cd         # Change directory
+pwd        # Show current directory path
+
+Screenshots Included
+
+UTM home screen with the created VM.
+
+ISO image mounted in UTM settings.
+
+Ubuntu installation interface.
+
+Ubuntu desktop screen after login.
+
+Terminal running basic commands like ls.
+
+What I Learned
+
+What virtual machines are and why they are useful in operating systems.
+
+How to allocate system resources (CPU, RAM, storage) to a virtual machine.
+
+Basic Linux terminal usage: navigating with ls, cd, and pwd.
+
+The structure and appearance of a Linux desktop environment.
+
+Reflection
+
+This was my first time creating and configuring a virtual machine on macOS using UTM. I now feel more confident working with Linux and using the terminal. I’m looking forward to more advanced system configuration in the next weeks.
