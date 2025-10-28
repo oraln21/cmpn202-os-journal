@@ -77,10 +77,38 @@ See screenshot below for terminal output.
 
 <img width="1440" height="900" alt="Screenshot 2025-10-28 at 13 48 41" src="https://github.com/user-attachments/assets/93780c53-214f-4ebf-beda-590d0cf5428f" />
 
+Week 5 – IPC with Signals
+
+In this lab, I explored process communication using Linux signals. I initiated a background process using:
+
+sleep 1000 &
 
 
+The process was confirmed with:
+
+ps aux | grep sleep
 
 
+Then, I sent different signals to manage the process lifecycle:
+
+Stop the process (SIGSTOP):
+
+kill -SIGSTOP 7420
+Continue the process (SIGCONT):
+kill -SIGCONT 7420
+
+Terminate the process gracefully (SIGTERM):
+kill -SIGTERM 7420
+
+Force kill (SIGKILL / -9):
+kill -9 7420
+
+
+Observation: Once SIGTERM was sent, the process was terminated and no longer appeared in the process list. Sending SIGKILL afterward resulted in a "no such process" error — confirming that it was already killed.
+
+<img width="1440" height="900" alt="Screenshot 2025-10-28 at 14 13 26" src="https://github.com/user-attachments/assets/d8b247cc-dda1-4334-8fcc-df9f85fb41a1" />
+
+<img width="1440" height="900" alt="Screenshot 2025-10-28 at 14 26 26" src="https://github.com/user-attachments/assets/6a1520b2-2f47-4b06-85d6-c1cb1b3a54cc" />
 
 
 
