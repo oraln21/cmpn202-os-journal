@@ -46,3 +46,5 @@ The structure and appearance of a Linux desktop environment.
 Reflection
 
 This was my first time creating and configuring a virtual machine on macOS using UTM. I now feel more confident working with Linux and using the terminal. I’m looking forward to more advanced system configuration in the next weeks.
+<img width="1440" height="900" alt="Screenshot 20<img width="1440" height="900" alt="Screenshot 2025-10-28 at 09 21 42" src="https://github.com/user-attachments/assets/ceee8f91-7671-49db-925b-9ad4604cb0d5" />
+25-10-28 at 09 21 42" src="https://github.com/user-attachments/assets/744ac210-a72b-46de-a95b-bc5e11942b28" />
