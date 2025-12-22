@@ -46,6 +46,41 @@ These checks are important for system administration and troubleshooting because
 
 <img width="2880" height="1800" alt="Screenshot 2025-12-22 at 19 51 28" src="https://github.com/user-attachments/assets/93bb0cbe-ab86-4157-b8a5-3b712eb40ebb" />
 
+Week 3 – Process Management and System Monitoring
+
+In Week 3, I explored how Linux manages running processes and how system resources are monitored in real time. I started by creating a dedicated working directory for this week and verified my location using the `pwd` command.
+
+I used the `ps` command to display active processes associated with the current terminal session. To gain a complete overview of all running processes and system services, I executed `ps aux`, which provided detailed information such as process IDs (PID), CPU usage, memory consumption, and command names.
+
+To observe system activity dynamically, I used the `top` command. This allowed me to monitor CPU usage, memory usage, load averages, and active processes in real time. This helped me understand how system resources are allocated and how processes compete for CPU and memory.
+
+Additionally, I searched for a specific running process using `ps aux | grep firefox`. This demonstrated how processes can be filtered and identified by name. I also learned that each running process is uniquely identified by a Process ID (PID), which is essential for managing and controlling processes.
+
+Overall, this week improved my understanding of Linux process management and system monitoring tools, which are fundamental concepts in operating systems.
+
+
+
+<img width="2880" height="1800" alt="Screenshot 2025-12-22 at 20 04 18" src="https://github.com/user-attachments/assets/7ebed612-e3f0-436b-afda-92ff332070a9" />
+
+<img width="2880" height="1800" alt="Screenshot 2025-12-22 at 19 33 03" src="https://github.com/user-attachments/assets/3ab3f5e5-873f-44f0-9db6-8eb1e471c1ae" />
+
+<img width="2880" height="1800" alt="Screenshot 2025-12-22 at 20 05 07" src="https://github.com/user-attachments/assets/39f2ea66-2007-4ab7-9eea-7cd23d07632f" />
+
+
+<img width="2880" height="1800" alt="Screenshot 2025-12-22 at 20 06 25" src="https://github.com/user-attachments/assets/038e6e44-ab40-45a1-8723-1743520ee1b5" />
+
+<img width="2880" height="1800" alt="Screenshot 2025-12-22 at 20 07 55" src="https://github.com/user-attachments/assets/769e99af-2af1-4201-b03f-679d52949bbf" />
+
+
+
+
+
+
+
+
+
+
+
 
 
 
