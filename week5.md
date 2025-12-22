@@ -1,114 +1,40 @@
-What I Learned This Week
+WEEK 5 – Inter-Process Communication (IPC)
+ipes
 
-This week, we explored various methods of Inter-Process Communication (IPC) in Linux. We practiced with basic pipes, named pipes (FIFOs), signals, and file-based IPC. These methods are essential for enabling communication and data sharing between running processes in an operating system.
+Named Pipes (FIFO)
 
-Tasks Performed
-1. Standard Pipe
+Signals
 
-We used the | operator to connect two commands. For example:
+File-based IPC (basit script ile)
 
-ls -l | grep .txt
-
-This command lists only .txt files in the current directory.
-
-Screenshot included showing command and output.
-
-2. Named Pipe (FIFO)
-
-We created a FIFO special file using mkfifo, and communicated between two terminals:
-
-mkfifo mypipe
-echo "Hello from Nilay" > mypipe
-cat < mypipe
-Screenshots included for FIFO creation and usage.
-
-3. Signals
-
-We simulated a background process using sleep, then terminated it using kill:
-
-sleep 1000
-ps aux | grep sleep
-kill -9 [PID]
-This taught us how to interact with processes through signals.
-Screenshots included showing process and signal usage.
-
-4. File-Based Communication
-
-Two processes interacted via a shared text file:
-
-echo "Data from process 1" > sharedfile.txt
-cat sharedfile.txt
-
-Screenshot included showing file write and read.
-
-Conclusion
-
-IPC is a powerful concept that helps build communication between processes in a system. Understanding pipes, signals, and file-based messaging lays the groundwork for advanced system programming and performance optimization.
-
-Named Pipe (FIFO) IPC Demonstration
-
-In this task, I implemented Inter-Process Communication using Named Pipes (FIFOs). This mechanism allows two independent processes to exchange data via a named pipe file.
-
-Steps:
-
-I created a FIFO file using:
-mkfifo mypipe
-in the first terminal, I sent a message:
-echo "Hello from process 1" > mypipe
-
-In a second terminal, I received the message:
-cat < mypipe
-
-Message successfully received:
-Hello from process 1
-See screenshot below for terminal output.
-
-<img width="1440" height="900" alt="Screenshot 2025-10-28 at 13 55 05" src="https://github.com/user-attachments/assets/74f44571-e423-4625-acf0-b336e44e041f" />
+<img width="2880" height="1800" alt="Screenshot 2025-12-22 at 20 32 20" src="https://github.com/user-attachments/assets/c92b1da0-d03d-4096-9ec1-02b045b1825d" />
+<img width="2880" height="1800" alt="Screenshot 2025-12-22 at 20 33 35" src="https://github.com/user-attachments/assets/7d6318ed-3c04-4f21-9591-f5970ee11dea" />
+This command demonstrates unnamed pipes, where the output of one process is passed directly as input to another process using the pipe (|) operator.
 
 
-<img width="1440" height="900" alt="Screenshot 2025-10-28 at 13 35 18" src="https://github.com/user-attachments/assets/dbe8cd97-5817-443b-9653-724a101f2106" />
+<img width="2880" height="1800" alt="Screenshot 2025-12-22 at 21 10 45" src="https://github.com/user-attachments/assets/3b73943a-b835-4a53-a636-d90bb3cc6c32" />
 
-<img width="1440" height="900" alt="Screenshot 2025-10-28 at 13 38 08" src="https://github.com/user-attachments/assets/0a505624-e635-486c-bd70-906c8e967f16" />
-
-
-<img width="1440" height="900" alt="Screenshot 2025-10-28 at 13 38 59" src="https://github.com/user-attachments/assets/a5e08c28-af21-4e5b-8717-c4241fa320dd" />
-
-<img width="1440" height="900" alt="Screenshot 2025-10-28 at 13 39 36" src="https://github.com/user-attachments/assets/d263a6b3-b109-4b6e-91b1-596e6a8927bb" />
-
-<img width="1440" height="900" alt="Screenshot 2025-10-28 at 13 48 41" src="https://github.com/user-attachments/assets/93780c53-214f-4ebf-beda-590d0cf5428f" />
-
-Week 5 – IPC with Signals
-
-In this lab, I explored process communication using Linux signals. I initiated a background process using:
-
-sleep 1000 &
+<img width="2880" height="1800" alt="Screenshot 2025-12-22 at 21 12 13" src="https://github.com/user-attachments/assets/b087fa2f-eeb6-486e-aef0-3976c1852de9" />
 
 
-The process was confirmed with:
+<img width="2880" height="1800" alt="Screenshot 2025-12-22 at 21 12 32" src="https://github.com/user-attachments/assets/e0244126-6d2b-48eb-833b-22fd432fc2aa" />
+“Each new terminal session starts in the home directory, so I manually navigated back to the working directory using cd.”
 
-ps aux | grep sleep
+Week 5 – Inter-Process Communication (IPC)
 
+In this week, I explored Inter-Process Communication (IPC) using named pipes (FIFO) in Linux. 
+I created a new user and performed all IPC tasks using this user to demonstrate multi-user process interaction.
 
-Then, I sent different signals to manage the process lifecycle:
+I created a working directory and a named pipe using the `mkfifo` command. 
+Named pipes require two processes: one for writing and one for reading. 
+When I executed `cat mypipe`, the terminal waited for input, which is expected behavior because FIFO blocks until another process writes data.
 
-Stop the process (SIGSTOP):
+In a second terminal session, I navigated back to the same directory and wrote data into the pipe using `echo`. 
+Once the data was written, the reading process immediately received and displayed the message.
 
-kill -SIGSTOP 7420
-Continue the process (SIGCONT):
-kill -SIGCONT 7420
-
-Terminate the process gracefully (SIGTERM):
-kill -SIGTERM 7420
-
-Force kill (SIGKILL / -9):
-kill -9 7420
+This experiment helped me understand blocking behavior, process synchronization, and how Linux handles IPC mechanisms safely and efficiently.
 
 
-Observation: Once SIGTERM was sent, the process was terminated and no longer appeared in the process list. Sending SIGKILL afterward resulted in a "no such process" error — confirming that it was already killed.
-
-<img width="1440" height="900" alt="Screenshot 2025-10-28 at 14 13 26" src="https://github.com/user-attachments/assets/d8b247cc-dda1-4334-8fcc-df9f85fb41a1" />
-
-<img width="1440" height="900" alt="Screenshot 2025-10-28 at 14 26 26" src="https://github.com/user-attachments/assets/6a1520b2-2f47-4b06-85d6-c1cb1b3a54cc" />
 
 
 
